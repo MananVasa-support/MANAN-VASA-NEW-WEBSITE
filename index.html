@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignment Template — Manan Vasa</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+  :root {
+    --red: #C8102E;
+    --red-dark: #9B0B22;
+    --red-light: #F7E8EB;
+    --black: #111111;
+    --grey-dark: #2D2D2D;
+    --grey-mid: #6B6B6B;
+    --grey-light: #EBEBEB;
+    --grey-xlight: #F6F6F6;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1a1a;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── Controls bar ── */
+  .controls {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .controls-left {
+    display: flex;
+    gap: 8px;
+  }
+  .tab-btn {
+    padding: 9px 18px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.55);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .tab-btn:hover { border-color: rgba(200,16,46,0.5); color: #fff; }
+  .tab-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
+
+  .controls-right {
+    display: flex;
+    gap: 8px;
+  }
+  .dl-btn {
+    padding: 9px 18px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.8);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dl-btn:hover { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.4); }
+  .dl-btn svg { width: 14px; height: 14px; }
+
+  /* ── Card ── */
+  #card {
+    width: 720px;
+    background: var(--white);
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+  }
+
+  /* Header */
+  .card-header {
+    background: var(--black);
+    padding: 36px 48px 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    position: relative;
+  }
+  .card-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+  }
+
+  .header-left {}
+  .session-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--red);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .session-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .session-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+  }
+
+  .header-right {
+    flex-shrink: 0;
+  }
+  .logo-img {
+    height: 52px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+  .logo-fallback {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    text-align: right;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+  }
+
+  /* Meta strip */
+  .meta-strip {
+    background: var(--grey-xlight);
+    border-bottom: 1px solid var(--grey-light);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .meta-cell {
+    padding: 14px 24px;
+    border-right: 1px solid var(--grey-light);
+  }
+  .meta-cell:last-child { border-right: none; }
+  .meta-lbl {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--red);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .meta-input {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--black);
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+  .meta-input::placeholder { color: #BCBCBC; }
+
+  /* Body */
+  .card-body {
+    background: var(--white);
+    padding: 36px 48px;
+  }
+
+  .tasks-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--grey-mid);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tasks-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--grey-light);
+  }
+
+  .task-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 8px;
+    border: 1px solid var(--grey-light);
+    border-radius: 4px;
+    overflow: visible;
+    transition: border-color 0.15s;
+  }
+  .task-row:focus-within { border-color: #CCCCCC; }
+
+  .task-num {
+    background: var(--black);
+    color: var(--red);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    width: 44px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+
+  .task-input {
+    flex: 1;
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black);
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    line-height: 1.5;
+    min-height: 48px;
+  }
+  .task-input::placeholder { color: #C8C8C8; }
+
+  .task-del {
+    background: transparent;
+    border: none;
+    padding: 14px 12px;
+    cursor: pointer;
+    color: #CFCFCF;
+    font-size: 16px;
+    transition: color 0.15s;
+    display: flex;
+    align-items: center;
+  }
+  .task-del:hover { color: var(--red); }
+
+  .add-task-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px dashed var(--grey-light);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--grey-mid);
+    transition: all 0.15s;
+    width: 100%;
+    margin-top: 6px;
+  }
+  .add-task-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-light); }
+
+  /* Note section */
+  .note-section { margin-top: 26px; }
+  .note-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--grey-mid);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .note-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--grey-light);
+  }
+  .note-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--black);
+    background: var(--grey-xlight);
+    border: 1px solid var(--grey-light);
+    border-radius: 4px;
+    resize: none;
+    outline: none;
+    min-height: 64px;
+    line-height: 1.6;
+    transition: border-color 0.15s;
+  }
+  .note-input::placeholder { color: #C8C8C8; }
+  .note-input:focus { border-color: #CCCCCC; background: #fff; }
+
+  /* Footer */
+  .card-footer {
+    background: var(--black);
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+  .footer-tag {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .footer-web {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  /* Loading overlay */
+  .loading-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .loading-overlay.show { display: flex; }
+  .loading-text {
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .spinner {
+    width: 32px; height: 32px;
+    border: 3px solid rgba(255,255,255,0.2);
+    border-top-color: var(--red);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Hide delete buttons and add button in export */
+  .export-hide { }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <div class="controls-left">
+    <button class="tab-btn active" onclick="switchTab('ps')">Productivity Shastra</button>
+    <button class="tab-btn" onclick="switchTab('bsu')">Business Scale-up Shastra</button>
+  </div>
+  <div class="controls-right">
+    <button class="dl-btn" onclick="downloadPNG()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      Download PNG
+    </button>
+    <button class="dl-btn" onclick="downloadPDF()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+      Save as PDF
+    </button>
+  </div>
+</div>
+
+<div id="card">
+
+  <!-- HEADER -->
+  <div class="card-header">
+    <div class="header-left">
+      <div class="session-label" id="session-label">Session Assignment</div>
+      <div class="session-title" id="main-title">Productivity<br>Shastra</div>
+      <div class="session-subtitle" id="main-subtitle">Make It Happen Framework©</div>
+    </div>
+    <div class="header-right">
+      <img
+        class="logo-img"
+        id="logo-img"
+        src="https://productivityshastra.com/wp-content/uploads/2024/07/Productivity-Shastra-Logo-Updated.png"
+        alt="Productivity Shastra"
+        onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';"
+      />
+      <div class="logo-fallback" id="logo-fallback" style="display:none;">MANAN VASA<br><span style="font-weight:300;font-size:11px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">Productivity Coach</span></div>
+    </div>
+  </div>
+
+  <!-- META STRIP -->
+  <div class="meta-strip">
+    <div class="meta-cell">
+      <div class="meta-lbl">Session No.</div>
+      <input class="meta-input" id="meta-session" placeholder="e.g. Session 3" />
+    </div>
+    <div class="meta-cell">
+      <div class="meta-lbl">Date</div>
+      <input class="meta-input" id="meta-date" type="date" />
+    </div>
+    <div class="meta-cell">
+      <div class="meta-lbl">Deadline</div>
+      <input class="meta-input" id="meta-deadline" type="date" />
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="card-body">
+    <div class="tasks-label">Assignments</div>
+    <div id="tasks-container"></div>
+    <button class="add-task-btn export-hide" id="add-btn" onclick="addTask()">
+      + Add task
+    </button>
+
+    <div class="note-section">
+      <div class="note-label">Coach's Note</div>
+      <textarea class="note-input" id="coach-note" placeholder="Add a personal note, encouragement, or reminder for your participants..." rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="card-footer">
+    <div class="footer-left">
+      <div class="footer-dot"></div>
+      <span class="footer-tag">#NoGyaanOnlyGain</span>
+    </div>
+    <span class="footer-web">productivityshastra.com</span>
+  </div>
+
+</div>
+
+<div class="loading-overlay" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-text">Generating...</div>
+</div>
+
+<script>
+  let activeTab = 'ps';
+
+  const tabData = {
+    ps: {
+      label: 'Session Assignment',
+      title: 'Productivity<br>Shastra',
+      subtitle: 'Make It Happen Framework©',
+    },
+    bsu: {
+      label: 'Session Assignment',
+      title: 'Business Scale-up<br>Shastra',
+      subtitle: 'Scale. Systemise. Sustain.',
+    }
+  };
+
+  let taskCount = 0;
+
+  function addTask(text = '') {
+    taskCount++;
+    const num = taskCount < 10 ? '0' + taskCount : '' + taskCount;
+    const div = document.createElement('div');
+    div.className = 'task-row';
+    div.id = 'task-' + taskCount;
+    div.innerHTML = `
+      <div class="task-num">${num}</div>
+      <textarea class="task-input" placeholder="Enter assignment or task..." rows="1" oninput="autoResize(this)">${text}</textarea>
+      <button class="task-del export-hide" onclick="removeTask('task-${taskCount}')" title="Remove">✕</button>
+    `;
+    document.getElementById('tasks-container').appendChild(div);
+    const ta = div.querySelector('textarea');
+    autoResize(ta);
+    ta.focus();
+  }
+
+  function removeTask(id) {
+    const el = document.getElementById(id);
+    if (el) el.remove();
+    renumberTasks();
+  }
+
+  function renumberTasks() {
+    const rows = document.querySelectorAll('#tasks-container .task-row');
+    taskCount = rows.length;
+    rows.forEach((r, i) => {
+      const n = i + 1;
+      r.querySelector('.task-num').textContent = n < 10 ? '0' + n : '' + n;
+    });
+  }
+
+  function autoResize(ta) {
+    ta.style.height = 'auto';
+    ta.style.height = Math.max(48, ta.scrollHeight) + 'px';
+  }
+
+  function switchTab(tab) {
+    activeTab = tab;
+    const d = tabData[tab];
+    document.getElementById('session-label').textContent = d.label;
+    document.getElementById('main-title').innerHTML = d.title;
+    document.getElementById('main-subtitle').textContent = d.subtitle;
+    document.querySelectorAll('.tab-btn').forEach((b, i) => {
+      b.classList.toggle('active', (i === 0 && tab === 'ps') || (i === 1 && tab === 'bsu'));
+    });
+  }
+
+  async function captureCard() {
+    const card = document.getElementById('card');
+
+    // 1. Hide UI-only elements
+    const exportHides = document.querySelectorAll('.export-hide');
+    exportHides.forEach(el => { el.dataset.prevDisplay = el.style.display; el.style.display = 'none'; });
+
+    // 2. Replace every textarea/input with a plain div so html2canvas sees the text
+    const replacements = [];
+    card.querySelectorAll('textarea, input').forEach(el => {
+      const val = el.value || '';
+      const cs = window.getComputedStyle(el);
+      const div = document.createElement('div');
+      div.style.cssText = `
+        font-family:${cs.fontFamily};
+        font-size:${cs.fontSize};
+        font-weight:${cs.fontWeight};
+        color:${cs.color};
+        background:transparent;
+        border:none;
+        outline:none;
+        width:100%;
+        padding:${cs.padding};
+        line-height:${cs.lineHeight};
+        white-space:pre-wrap;
+        word-break:break-word;
+        box-sizing:border-box;
+        min-height:${cs.minHeight};
+      `;
+      div.textContent = val || el.placeholder;
+      if (!val) div.style.color = '#C8C8C8';
+      el.parentNode.insertBefore(div, el);
+      el.style.display = 'none';
+      replacements.push({ el, div });
+    });
+
+    // 3. Force card to show its full natural height (no clipping)
+    const origOverflow = card.style.overflow;
+    card.style.overflow = 'visible';
+
+    // 4. Wait for layout to settle
+    await new Promise(r => setTimeout(r, 120));
+
+    // 5. Measure true full height
+    const fullH = card.scrollHeight;
+    const fullW = card.offsetWidth;
+
+    const canvas = await html2canvas(card, {
+      scale: 3,
+      useCORS: true,
+      allowTaint: true,
+      backgroundColor: '#ffffff',
+      logging: false,
+      width: fullW,
+      height: fullH,
+      windowWidth: fullW,
+      windowHeight: fullH,
+      scrollX: 0,
+      scrollY: 0,
+      x: 0,
+      y: 0,
+    });
+
+    // 6. Restore everything
+    card.style.overflow = origOverflow;
+    replacements.forEach(({ el, div }) => {
+      el.style.display = '';
+      div.remove();
+    });
+    exportHides.forEach(el => { el.style.display = el.dataset.prevDisplay || ''; });
+
+    return canvas;
+  }
+
+  async function downloadPNG() {
+    const loading = document.getElementById('loading');
+    loading.classList.add('show');
+    try {
+      const canvas = await captureCard();
+      const link = document.createElement('a');
+      const tab = activeTab === 'ps' ? 'Productivity-Shastra' : 'Business-Scaleup-Shastra';
+      link.download = `Assignment-${tab}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } finally {
+      loading.classList.remove('show');
+    }
+  }
+
+  async function downloadPDF() {
+    const loading = document.getElementById('loading');
+    loading.classList.add('show');
+    try {
+      const canvas = await captureCard();
+      const { jsPDF } = window.jspdf;
+      const imgData = canvas.toDataURL('image/png');
+      const pdfW = 210;
+      const pdfH = (canvas.height / canvas.width) * pdfW;
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pdfW, pdfH] });
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfW, pdfH);
+      const tab = activeTab === 'ps' ? 'Productivity-Shastra' : 'Business-Scaleup-Shastra';
+      pdf.save(`Assignment-${tab}.pdf`);
+    } finally {
+      loading.classList.remove('show');
+    }
+  }
+
+  // Init with 3 tasks
+  addTask();
+  addTask();
+  addTask();
+</script>
+</body>
+</html>
