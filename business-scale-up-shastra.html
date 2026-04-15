@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Scale-Up Shastra™ — CA Manan Vasa | 6-Month Implementation Cohort</title>
+<meta name="description" content="A 6-Month Closed Implementation Cohort — limited to 20 Founders — where CA Manan Vasa and his Implementers step into your business and do not leave until the work is done.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C8000A;--red-lt:#E8000F;--black:#0D0D0D;--ink:#1A1A1A;--ink2:#2D2D2D;--grey1:#3D3D3D;--grey2:#6B6B6B;--grey3:#9B9B9B;--grey4:#C4C4C4;--grey5:#E8E8E8;--grey6:#F2F2F2;--grey7:#F8F8F8;--white:#FFFFFF;--bd:rgba(0,0,0,.08);--bd2:rgba(0,0,0,.14);--dp:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace;--nav-h:76px;--max:1360px;--ease:cubic-bezier(.16,1,.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--max);margin:0 auto;padding:0 40px}
+.section{padding:120px 0}
+.label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px}
+.label::before{content:'';width:28px;height:1px;background:var(--red);flex-shrink:0}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.nav.scrolled{border-color:var(--grey5);box-shadow:0 1px 0 var(--grey5)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max);margin:0 auto;padding:0 40px}
+.nav__logo-text{font-family:var(--dp);font-size:22px;font-weight:600;color:var(--black);letter-spacing:.04em}
+.nav__logo-text span{color:var(--red)}
+.nav__links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav__links a{font-size:13px;font-weight:500;color:var(--grey1);letter-spacing:.04em;transition:color .2s;position:relative}
+.nav__links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav__links a:hover{color:var(--black)}
+.nav__links a:hover::after{transform:scaleX(1)}
+.nav__cta{background:var(--red);color:#fff!important;padding:11px 24px;font-size:12px!important;font-weight:600!important;letter-spacing:.1em!important;text-transform:uppercase;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:background .2s!important}
+.nav__cta::after{display:none!important}
+.nav__cta:hover{background:var(--red-lt)!important}
+.nav__burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav__burger span{width:24px;height:1.5px;background:var(--ink);display:block}
+.nav__drawer{position:fixed;inset:0;background:var(--white);z-index:999;display:flex;flex-direction:column;justify-content:center;padding:60px 40px;transform:translateX(100%);transition:transform .5s var(--ease)}
+.nav__drawer.open{transform:none}
+.nav__drawer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.nav__drawer ul a{font-family:var(--dp);font-size:40px;color:var(--ink);transition:color .2s}
+.nav__drawer ul a:hover{color:var(--red)}
+.nav__drawer-close{position:absolute;top:28px;right:32px;font-size:28px;cursor:pointer;background:none;border:none;color:var(--ink)}
+/* BUTTONS */
+.btn-primary{background:var(--red);color:#fff;padding:16px 36px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);border:none;display:inline-flex;align-items:center;gap:10px;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+.btn-primary:hover{background:var(--red-lt);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,0,10,.25)}
+.btn-secondary{background:transparent;color:var(--ink);padding:15px 32px;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--bd2);display:inline-flex;align-items:center;gap:10px;cursor:pointer;transition:border-color .2s,background .2s}
+.btn-secondary:hover{border-color:var(--ink);background:var(--grey7)}
+.section-title{font-family:var(--dp);font-size:clamp(36px,4vw,60px);font-weight:400;line-height:1.1;color:var(--black);margin-bottom:24px;margin-top:16px}
+.section-title em{font-style:italic;color:var(--red)}
+/* PAGE HERO */
+.page-hero{background:var(--black);padding:160px 0 100px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.page-hero::after{content:'';position:absolute;top:0;left:0;width:4px;height:200px;background:linear-gradient(to bottom,var(--red),transparent)}
+.page-hero__inner{position:relative;z-index:2}
+.page-hero__pre{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.page-hero__pre::before{content:'';width:28px;height:1px;background:rgba(255,255,255,.3)}
+.page-hero__h1{font-family:var(--dp);font-size:clamp(44px,5.5vw,82px);font-weight:400;color:var(--white);line-height:1.06;margin-bottom:28px;letter-spacing:-.01em}
+.page-hero__h1 em{font-style:italic;color:var(--red)}
+.page-hero__sub{font-size:17px;color:rgba(255,255,255,.6);line-height:1.7;max-width:640px;margin-bottom:40px}
+.page-hero__badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.badge{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.12);padding:8px 16px}
+.badge--red{color:var(--red);border-color:rgba(200,0,10,.4)}
+/* WHAT IS BSS */
+.what-is{background:var(--white)}
+.what-is__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.what-is__h2{font-family:var(--dp);font-size:clamp(34px,3.5vw,52px);font-weight:400;color:var(--black);line-height:1.12;margin:16px 0 24px}
+.what-is__h2 em{font-style:italic;color:var(--red)}
+.what-is__body{font-size:15px;color:var(--grey2);line-height:1.8;margin-bottom:16px}
+.what-is__pull{font-family:var(--dp);font-size:20px;font-style:italic;color:var(--grey1);line-height:1.6;padding:28px 32px;border-left:2px solid var(--red);margin:32px 0;background:var(--grey7)}
+.nots-grid{display:flex;flex-direction:column;gap:2px;margin-top:8px}
+.not-item{background:var(--grey7);border:1px solid var(--grey5);padding:16px 24px;display:flex;align-items:center;gap:16px;font-size:14px;color:var(--grey1)}
+.not-item .x{color:var(--grey4);font-size:18px;flex-shrink:0}
+.not-item .arrow{color:var(--red);font-size:18px;flex-shrink:0;margin-left:auto}
+.not-item strong{color:var(--black)}
+/* NUMBERS BANNER */
+.numbers-banner{background:var(--grey6);border-top:1px solid var(--grey5);border-bottom:1px solid var(--grey5);padding:60px 0}
+.numbers-banner__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0}
+.nb-item{text-align:center;padding:24px 16px;border-right:1px solid var(--grey5)}
+.nb-item:last-child{border-right:none}
+.nb-num{font-family:var(--dp);font-size:40px;font-weight:300;color:var(--black);line-height:1;margin-bottom:6px}
+.nb-num span{color:var(--red);font-size:28px}
+.nb-label{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey3)}
+/* JOURNEY */
+.journey{background:var(--white)}
+.journey__track{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:64px;position:relative}
+.journey__track::before{content:'';position:absolute;top:40px;left:10%;right:10%;height:1px;background:linear-gradient(to right,var(--red),var(--grey4));z-index:0}
+.month-card{background:var(--grey7);border:1px solid var(--grey5);padding:36px 24px;position:relative;z-index:1;text-align:center;transition:border-color .3s,box-shadow .3s,transform .3s var(--ease)}
+.month-card:hover{border-color:var(--grey3);box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-4px)}
+.month-card:last-child{background:var(--black);border-color:var(--black)}
+.month-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:20px;display:block}
+.month-card:last-child .month-label{color:rgba(255,255,255,.5)}
+.month-dot{width:16px;height:16px;background:var(--white);border:2px solid var(--red);border-radius:50%;margin:0 auto 20px}
+.month-card:last-child .month-dot{background:var(--red);border-color:var(--red)}
+.month-title{font-family:var(--dp);font-size:18px;font-weight:500;color:var(--black);margin-bottom:10px;line-height:1.3}
+.month-card:last-child .month-title{color:var(--white)}
+.month-desc{font-size:13px;color:var(--grey2);line-height:1.6}
+.month-card:last-child .month-desc{color:rgba(255,255,255,.55)}
+/* 12 MODULES */
+.modules{background:var(--grey7);border-top:1px solid var(--grey5)}
+.modules__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;background:var(--grey5)}
+.module-card{background:var(--white);padding:32px 28px;transition:background .2s}
+.module-card:hover{background:var(--grey7)}
+.module-card__num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--red);margin-bottom:12px}
+.module-card__title{font-family:var(--dp);font-size:20px;font-weight:500;color:var(--black);margin-bottom:8px;line-height:1.3}
+.module-card__desc{font-size:13px;color:var(--grey2);line-height:1.6}
+.module-card__output{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--grey4);text-transform:uppercase}
+.module-card__output span{color:var(--red)}
+/* WEEKLY STRUCTURE */
+.weekly{background:var(--black);padding:100px 0}
+.weekly__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:56px}
+.weekly__label{color:rgba(255,255,255,.4)}
+.weekly__label::before{background:rgba(255,255,255,.25)}
+.weekly__h2{font-family:var(--dp);font-size:clamp(32px,3.5vw,50px);font-weight:400;color:var(--white);line-height:1.12;margin:20px 0 28px}
+.weekly__h2 em{font-style:italic;color:var(--red)}
+.weekly__body{font-size:15px;color:rgba(255,255,255,.55);line-height:1.8}
+.schedule{display:flex;flex-direction:column;gap:2px}
+.sched-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:20px 24px;transition:border-color .2s,background .2s}
+.sched-item:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
+.sched-day{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.sched-title{font-family:var(--dp);font-size:17px;font-weight:500;color:var(--white);margin-bottom:4px}
+.sched-detail{font-size:13px;color:rgba(255,255,255,.45);line-height:1.55}
+/* 3 PROMISES */
+.promises{background:var(--white)}
+.promises__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;background:var(--grey5)}
+.promise-card{background:var(--white);padding:48px 36px;transition:background .2s,transform .3s var(--ease)}
+.promise-card:hover{background:var(--grey7);transform:translateY(-3px)}
+.promise-num{font-family:var(--dp);font-size:80px;font-weight:300;color:var(--grey5);line-height:1;margin-bottom:-20px}
+.promise-text{font-family:var(--dp);font-size:22px;font-weight:500;color:var(--black);line-height:1.35;position:relative;z-index:1}
+.promise-text em{font-style:italic;color:var(--red)}
+/* INVESTMENT */
+.investment{background:var(--grey7);border-top:1px solid var(--grey5)}
+.investment__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.inv-card{background:var(--white);border:1px solid var(--grey5);padding:48px 40px}
+.inv-card--black{background:var(--black);border-color:var(--black)}
+.inv-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+.inv-price{font-family:var(--dp);font-size:52px;font-weight:300;color:var(--black);line-height:1;margin-bottom:8px}
+.inv-card--black .inv-price{color:var(--white)}
+.inv-price-note{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--grey3);text-transform:uppercase;margin-bottom:28px}
+.inv-card--black .inv-price-note{color:rgba(255,255,255,.4)}
+.inv-includes{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.inv-includes li{font-size:14px;color:var(--grey1);display:flex;align-items:flex-start;gap:10px}
+.inv-card--black .inv-includes li{color:rgba(255,255,255,.65)}
+.inv-includes li::before{content:'—';color:var(--red);flex-shrink:0}
+.inv-policy{font-size:13px;color:var(--grey3);line-height:1.65;padding-top:20px;border-top:1px solid var(--grey5)}
+.inv-card--black .inv-policy{color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.1)}
+/* TESTIMONIALS on BSS page */
+.test-strip{background:var(--white);border-top:1px solid var(--grey5)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.test-card{background:var(--grey7);border:1px solid var(--grey5);padding:36px 32px;transition:border-color .3s,box-shadow .3s}
+.test-card:hover{border-color:var(--grey3);box-shadow:0 8px 32px rgba(0,0,0,.07)}
+.test-quote{font-family:var(--dp);font-size:17px;font-style:italic;color:var(--grey1);line-height:1.65;margin-bottom:24px}
+.test-quote::before{content:'\201C';font-size:48px;color:var(--grey5);line-height:.5;display:block;margin-bottom:16px;font-family:var(--dp)}
+.test-author{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey3)}
+.test-author strong{color:var(--black);display:block;font-size:13px;letter-spacing:0;text-transform:none;font-family:var(--sans);font-weight:600;margin-bottom:2px}
+.test-result{margin-top:16px;padding-top:16px;border-top:1px solid var(--grey5);font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--red);text-transform:uppercase}
+/* APPLY STRIP */
+.apply-strip{background:var(--black);padding:100px 0;text-align:center}
+.apply-strip__h2{font-family:var(--dp);font-size:clamp(36px,4.5vw,64px);font-weight:400;color:var(--white);line-height:1.1;margin-bottom:20px}
+.apply-strip__h2 em{font-style:italic;color:var(--red)}
+.apply-strip__sub{font-size:16px;color:rgba(255,255,255,.5);max-width:600px;margin:0 auto 40px;line-height:1.7}
+/* FOOTER */
+.footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:60px 0 40px}
+.footer__inner{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px}
+.footer__logo-text{font-family:var(--dp);font-size:20px;color:var(--white);margin-bottom:12px}
+.footer__logo-text span{color:var(--red)}
+.footer__tagline{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:16px}
+.footer__addr{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
+.footer__col-title{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
+.footer__links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer__links a{font-size:13px;color:rgba(255,255,255,.5);transition:color .2s}
+.footer__links a:hover{color:var(--white)}
+.footer__bottom{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.25);text-transform:uppercase}
+.footer__bottom a{color:rgba(255,255,255,.35);transition:color .2s}
+.footer__bottom a:hover{color:rgba(255,255,255,.65)}
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:900;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 20px;box-shadow:0 4px 24px rgba(37,211,102,.35);cursor:pointer;text-decoration:none;transition:transform .3s var(--ease)}
+.wa-float:hover{transform:translateY(-3px)}
+/* RESPONSIVE */
+@media(max-width:1100px){.what-is__grid,.weekly__grid,.investment__grid{grid-template-columns:1fr;gap:48px}.journey__track{grid-template-columns:repeat(2,1fr)}.journey__track::before{display:none}.modules__grid{grid-template-columns:1fr 1fr}.promises__grid,.test-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.container{padding:0 24px}.section{padding:80px 0}.nav__links{display:none}.nav__burger{display:flex}.numbers-banner__grid{grid-template-columns:repeat(2,1fr)}.nb-item:nth-child(2){border-right:none}.modules__grid{grid-template-columns:1fr}.footer__inner{grid-template-columns:1fr 1fr}.footer__bottom{flex-direction:column;gap:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html">
+      <img src="images/MANAN_VASA_Red_Logo_with_Plain_White_Font_03.png" alt="Manan Vasa" height="42" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav__logo-text" style="display:none">MANAN <span>VASA</span></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#work">The Work</a></li>
+      <li><a href="index.html#results">Results</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="business-scale-up-shastra.html" style="color:var(--black)">BSS™</a></li>
+      <li><a href="index.html#apply" class="nav__cta">Apply Now →</a></li>
+    </ul>
+    <button class="nav__burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__drawer" id="drawer">
+  <button class="nav__drawer-close" id="dclose">✕</button>
+  <ul>
+    <li><a href="index.html" class="dl">Home</a></li>
+    <li><a href="about.html" class="dl">About</a></li>
+    <li><a href="business-scale-up-shastra.html" class="dl">BSS™</a></li>
+    <li><a href="productivity-shastra.html" class="dl">Productivity Shastra</a></li>
+    <li><a href="one-to-one.html" class="dl">One-to-One</a></li>
+    <li><a href="index.html#apply" class="dl">Apply Now</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container page-hero__inner">
+    <div class="page-hero__pre reveal">Flagship Engagement · 6-Month Closed Cohort</div>
+    <h1 class="page-hero__h1 reveal" style="transition-delay:.1s">
+      Business<br>Scale-Up<br><em>Shastra™</em>
+    </h1>
+    <p class="page-hero__sub reveal" style="transition-delay:.2s">
+      "Double Your Business. Without Doubling Your Involvement." A 6-Month Closed Implementation Cohort — limited to 20 Founders — where CA Manan Vasa and his Implementers step into your business as Transformation Architects and do not leave until the work is done, the systems are live, and tangible results are visible.
+    </p>
+    <div class="page-hero__badges reveal" style="transition-delay:.3s">
+      <span class="badge badge--red">Maximum 20 Founders</span>
+      <span class="badge">No Exceptions. Ever.</span>
+      <span class="badge">₹2 Cr – ₹100 Cr Turnover</span>
+      <span class="badge">6 Months · 120 Hours Live</span>
+      <span class="badge">Free Repeat Until Results</span>
+    </div>
+    <div style="margin-top:44px" class="reveal" style="transition-delay:.35s">
+      <a href="index.html#apply" class="btn-primary">Apply for BSS™ 2026 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS BSS -->
+<section class="section what-is">
+  <div class="container">
+    <div class="what-is__grid">
+      <div>
+        <div class="label reveal">What Is BSS™</div>
+        <h2 class="what-is__h2 reveal" style="transition-delay:.1s">
+          We Are Not Advisors.<br>
+          We Are <em>Builders.</em><br>
+          We Do Not Leave.
+        </h2>
+        <p class="what-is__body reveal" style="transition-delay:.15s">
+          "We do not Advise and Exit. We do not motivate. We are not Business Coaches, Consultants, Advisors or Virtual CFOs/CXOs. We are the 'Doers Team' that gets in the trenches with you — we make things happen. We do Structured, Ruthless, Hands-on Implementation."
+        </p>
+        <p class="what-is__body reveal" style="transition-delay:.2s">
+          Every session produces a live system — not a workbook, not a deck, not a framework to implement on your own. By Month 6, your business runs differently. Structurally. Measurably. Permanently.
+        </p>
+        <div class="what-is__pull reveal" style="transition-delay:.25s">
+          "There is no 'on your own' in BSS. We are the only program in India that doesn't end when the room does."
+        </div>
+      </div>
+      <div>
+        <div class="label reveal" style="margin-bottom:20px">CA Manan Vasa Is Not a...</div>
+        <div class="nots-grid reveal" style="transition-delay:.1s">
+          <div class="not-item"><span class="x">✗</span> Business Coach <span class="arrow">→</span> <strong>Implementation Partner</strong></div>
+          <div class="not-item"><span class="x">✗</span> Consultant <span class="arrow">→</span> <strong>Transformation Architect</strong></div>
+          <div class="not-item"><span class="x">✗</span> Advisor <span class="arrow">→</span> <strong>Someone Who Stays Until Done</strong></div>
+          <div class="not-item"><span class="x">✗</span> Trainer <span class="arrow">→</span> <strong>On-Ground Doer</strong></div>
+          <div class="not-item"><span class="x">✗</span> Motivational Speaker <span class="arrow">→</span> <strong>Structural Engineer of Business</strong></div>
+          <div class="not-item"><span class="x">✗</span> Virtual CFO <span class="arrow">→</span> <strong>Across All 6 Domains Simultaneously</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS BANNER -->
+<div class="numbers-banner">
+  <div class="container">
+    <div class="numbers-banner__grid">
+      <div class="nb-item reveal">
+        <div class="nb-num">20<span>MAX</span></div>
+        <div class="nb-label">Founders at a Time</div>
+      </div>
+      <div class="nb-item reveal" style="transition-delay:.08s">
+        <div class="nb-num">240</div>
+        <div class="nb-label">One-to-One Meets</div>
+      </div>
+      <div class="nb-item reveal" style="transition-delay:.12s">
+        <div class="nb-num">120<span>hrs</span></div>
+        <div class="nb-label">Live Implementation</div>
+      </div>
+      <div class="nb-item reveal" style="transition-delay:.16s">
+        <div class="nb-num">12</div>
+        <div class="nb-label">Live Systems Built</div>
+      </div>
+      <div class="nb-item reveal" style="transition-delay:.2s">
+        <div class="nb-num">6<span>mo</span></div>
+        <div class="nb-label">Full Duration</div>
+      </div>
+      <div class="nb-item reveal" style="transition-delay:.24s">
+        <div class="nb-num">∞</div>
+        <div class="nb-label">Free Repeat Until Results</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JOURNEY -->
+<section class="section journey">
+  <div class="container">
+    <div class="label reveal">The Transformation Arc</div>
+    <h2 class="section-title reveal" style="transition-delay:.1s; max-width:640px">
+      Month 0 to Month 6 —<br>
+      What <em>Actually Changes.</em>
+    </h2>
+    <div class="journey__track reveal" style="transition-delay:.2s">
+      <div class="month-card">
+        <span class="month-label">Month 0 — Entry</span>
+        <div class="month-dot"></div>
+        <div class="month-title">"I built the business. Now the business runs me."</div>
+        <div class="month-desc">You are the bottleneck. Strategy lives in your head. Teams wait. Cash flow is anxious. You are first in, last out.</div>
+      </div>
+      <div class="month-card">
+        <span class="month-label">Month 2 — Emergence</span>
+        <div class="month-dot"></div>
+        <div class="month-title">What lived in your head now exists on paper.</div>
+        <div class="month-desc">First time working ON the business, not in it. Blueprint exists. Your team can see the direction for the first time.</div>
+      </div>
+      <div class="month-card">
+        <span class="month-label">Month 4 — Shift</span>
+        <div class="month-dot"></div>
+        <div class="month-title">Firefighting reduces. Team stops waiting.</div>
+        <div class="month-desc">Systems absorb what used to come to you. You begin to see the business from above it — not from inside the fire.</div>
+      </div>
+      <div class="month-card">
+        <span class="month-label">Month 6 — Freedom</span>
+        <div class="month-dot"></div>
+        <div class="month-title">Light. Structured. Yours again.</div>
+        <div class="month-desc">Systems report truth. Teams operate without chasing. You remember why you built this. Saturday mornings are yours again.</div>
+      </div>
+      <div class="month-card">
+        <span class="month-label">Beyond — Compounding</span>
+        <div class="month-dot"></div>
+        <div class="month-title">Sustainable. Ethical. Growing.</div>
+        <div class="month-desc">"Businesses scale in two ways — by increasing effort, or by increasing order. One exhausts. The other compounds. Choose consciously."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 MODULES -->
+<section class="section modules">
+  <div class="container">
+    <div class="label reveal">The 12 Modules</div>
+    <h2 class="section-title reveal" style="transition-delay:.1s; max-width:680px">
+      Each Module Produces a<br>
+      <em>Live System</em> — Not a Workbook.
+    </h2>
+    <p style="font-size:15px;color:var(--grey2);max-width:620px;line-height:1.75;margin-top:4px" class="reveal" style="transition-delay:.2s">Every session ends with something built, installed, and operating in your business. Not notes to implement later. A working system, live today.</p>
+
+    <div class="modules__grid">
+      <div class="module-card reveal">
+        <div class="module-card__num">Module 01</div>
+        <div class="module-card__title">Business Blueprint Shastra</div>
+        <div class="module-card__desc">3-year financial blueprint, revenue architecture, personal wealth roadmap, organisational design</div>
+        <div class="module-card__output">Output: <span>Live Blueprint Document</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.05s">
+        <div class="module-card__num">Module 02</div>
+        <div class="module-card__title">Purpose Singularity Shastra</div>
+        <div class="module-card__desc">Organisation constitution, vision & mission definition, identity gap analysis</div>
+        <div class="module-card__output">Output: <span>Org Constitution</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.1s">
+        <div class="module-card__num">Module 03</div>
+        <div class="module-card__title">Growth Strategy Shastra</div>
+        <div class="module-card__desc">Growth opportunity map, white space analysis, strategic alliance architecture</div>
+        <div class="module-card__output">Output: <span>Growth Strategy Map</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.05s">
+        <div class="module-card__num">Module 04</div>
+        <div class="module-card__title">Marketing Excellence Shastra</div>
+        <div class="module-card__desc">Lead requirement calculator, ideal customer avatar, demand engine design</div>
+        <div class="module-card__output">Output: <span>Live Demand Engine</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.1s">
+        <div class="module-card__num">Module 05</div>
+        <div class="module-card__title">Sales Mastery Shastra</div>
+        <div class="module-card__desc">Repeatable sales process, pitch design, objection handling, conversion systems</div>
+        <div class="module-card__output">Output: <span>Sales Playbook</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.15s">
+        <div class="module-card__num">Module 06</div>
+        <div class="module-card__title">Work-Life Balance Shastra</div>
+        <div class="module-card__desc">Personal KPIs, life systems, daily completion practices, integrity framework</div>
+        <div class="module-card__output">Output: <span>Personal Operating System</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-card__num">Module 07</div>
+        <div class="module-card__title">Personal Productivity Shastra</div>
+        <div class="module-card__desc">Time audit, calendar control, outcome-based planning, focus protection</div>
+        <div class="module-card__output">Output: <span>Productivity Dashboard</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.05s">
+        <div class="module-card__num">Module 08</div>
+        <div class="module-card__title">Effective Delegation Shastra</div>
+        <div class="module-card__desc">Delegation systems, ownership transfer, reverse delegation prevention</div>
+        <div class="module-card__output">Output: <span>Delegation Framework</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.1s">
+        <div class="module-card__num">Module 09</div>
+        <div class="module-card__title">Team Productivity Shastra</div>
+        <div class="module-card__desc">KPIs, review structures, incentive systems, team accountability governance</div>
+        <div class="module-card__output">Output: <span>Team Accountability System</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.05s">
+        <div class="module-card__num">Module 10</div>
+        <div class="module-card__title">Dashboard CEO Shastra</div>
+        <div class="module-card__desc">Live dashboards, MIS reports, CEO visibility system, single source of truth</div>
+        <div class="module-card__output">Output: <span>Live CEO Dashboard</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.1s">
+        <div class="module-card__num">Module 11</div>
+        <div class="module-card__title">Finance Mastery Shastra</div>
+        <div class="module-card__desc">Cash flow systems, collection discipline, P&L command, working capital control</div>
+        <div class="module-card__output">Output: <span>Finance Control System</span></div>
+      </div>
+      <div class="module-card reveal" style="transition-delay:.15s">
+        <div class="module-card__num">Module 12</div>
+        <div class="module-card__title">Existence Completion Shastra</div>
+        <div class="module-card__desc">Monthly/quarterly/annual completion, SIAR analysis, strategic resets</div>
+        <div class="module-card__output">Output: <span>Business Rhythm Calendar</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY STRUCTURE -->
+<section class="weekly">
+  <div class="container">
+    <div class="label weekly__label reveal">Weekly Structure</div>
+    <div class="weekly__grid">
+      <div>
+        <h2 class="weekly__h2 reveal" style="transition-delay:.1s">
+          6 Hours a Week.<br>
+          <em>6 Months.</em><br>
+          A Business That Runs Without You.
+        </h2>
+        <p class="weekly__body reveal" style="transition-delay:.15s">
+          Every week is structured. Every session has an outcome. There is no attendance — there is accountability. You declare. You execute. You review. Rinse, repeat, until it becomes the operating system of your business.
+        </p>
+        <div style="margin-top:36px" class="reveal" style="transition-delay:.2s">
+          <p style="font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:12px">Direct Access to CA Manan Vasa</p>
+          <a href="tel:+918097010410" style="font-family:var(--dp);font-size:22px;color:var(--white)">+91 80970 10410</a>
+          <p style="font-size:12px;color:rgba(255,255,255,.35);margin-top:4px">Call or WhatsApp directly — always</p>
+        </div>
+      </div>
+      <div class="schedule reveal" style="transition-delay:.2s">
+        <div class="sched-item">
+          <div class="sched-day">Monday · 4:30 – 7:30 PM</div>
+          <div class="sched-title">Group Cohort Architecture Session</div>
+          <div class="sched-detail">CA Manan Vasa leads. 4:30–5:30 learning & demo → 5:30–7:00 practice on your business → 7:00–7:30 Q&A + open session</div>
+        </div>
+        <div class="sched-item">
+          <div class="sched-day">Tue / Wed · 30–60 mins</div>
+          <div class="sched-title">Customised Implementation Meet</div>
+          <div class="sched-detail">One-to-one with your dedicated Implementer. Your business. Your challenges. 100% customised.</div>
+        </div>
+        <div class="sched-item">
+          <div class="sched-day">Tue / Wed · 20–40 mins</div>
+          <div class="sched-title">Personalised Hand-Holding Call</div>
+          <div class="sched-detail">Sales funnel review, weekly priorities, personal challenges — your Implementer, your agenda</div>
+        </div>
+        <div class="sched-item">
+          <div class="sched-day">Friday · 10:30 AM · 60 mins</div>
+          <div class="sched-title">Tribe of Four — Peer Session</div>
+          <div class="sched-detail">No Manan. Just 4 founders holding each other accountable. The most powerful hour of the week.</div>
+        </div>
+        <div class="sched-item">
+          <div class="sched-day">Saturday · 6:00 PM · 10 mins</div>
+          <div class="sched-title">Accountability Check-In — Full Cohort</div>
+          <div class="sched-detail">Declare results. Wins acknowledged. Red flags surfaced. Nothing hidden. Everything measured.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 PROMISES -->
+<section class="section promises">
+  <div class="container">
+    <div class="label reveal">Three Promises</div>
+    <h2 class="section-title reveal" style="transition-delay:.1s; max-width:640px">
+      We Do Not Take Engagements<br>
+      <em>We Cannot Win.</em>
+    </h2>
+    <div class="promises__grid reveal" style="transition-delay:.2s">
+      <div class="promise-card">
+        <div class="promise-num">01</div>
+        <div class="promise-text">Sustainably & Ethically Scale Up your Business without taking any more <em>Stress or Risk</em></div>
+      </div>
+      <div class="promise-card">
+        <div class="promise-num">02</div>
+        <div class="promise-text">Build a Value, System & Teams Driven Business that <em>runs without you</em></div>
+      </div>
+      <div class="promise-card">
+        <div class="promise-num">03</div>
+        <div class="promise-text">Create Freedom to Be, Do & Have the Life you wanted — <em>without compromising Work-Life Balance</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="section investment">
+  <div class="container">
+    <div class="label reveal">Investment</div>
+    <h2 class="section-title reveal" style="transition-delay:.1s; max-width:600px">
+      What BSS™ Costs.<br>
+      What It <em>Returns.</em>
+    </h2>
+    <div class="investment__grid reveal" style="transition-delay:.2s">
+      <div class="inv-card">
+        <div class="inv-label">Current Investment</div>
+        <div class="inv-price">₹3,00,000</div>
+        <div class="inv-price-note">+ GST &nbsp;·&nbsp; Increasing to ₹5,00,000 + GST from 1st April 2026</div>
+        <ul class="inv-includes">
+          <li>20 Group Cohort Architecture Sessions</li>
+          <li>240 One-to-One Handholding & Customisation Meets</li>
+          <li>120 Hours of Live Implementation</li>
+          <li>One Dedicated Implementer — only for you</li>
+          <li>Lifetime Free Access to Tools</li>
+          <li>Free Access to Altus Network (1,500+ Members)</li>
+          <li>All sessions recorded — attend on Zoom if travelling</li>
+          <li>Direct access to CA Manan Vasa — always</li>
+        </ul>
+        <p class="inv-policy">No refunds. If we cannot deliver measurable results, we will say so before you join. We do not take engagements we cannot win.</p>
+      </div>
+      <div class="inv-card inv-card--black">
+        <div class="inv-label">The Free Repeat Policy</div>
+        <div style="font-family:var(--dp);font-size:36px;font-weight:300;color:var(--white);line-height:1.2;margin-bottom:20px">Free Repeat Until Investment Recovered. In Writing.</div>
+        <p style="font-size:15px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:24px">If you have completed the programme and cannot demonstrate that your investment has been recovered — you repeat BSS™ at zero cost. No questions asked. One condition only: no break between batches.</p>
+        <ul class="inv-includes">
+          <li>Written confirmation required — not a feeling</li>
+          <li>Repeat until the numbers prove it</li>
+          <li>One condition: no break between batches</li>
+          <li>Because we do not take engagements we cannot win</li>
+        </ul>
+        <div style="margin-top:32px">
+          <a href="index.html#apply" class="btn-primary">Apply for BSS™ 2026 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section test-strip">
+  <div class="container">
+    <div class="label reveal">What Founders Say</div>
+    <h2 class="section-title reveal" style="transition-delay:.1s; max-width:600px">
+      Real Words. Real Founders.<br>
+      <em>Real Numbers.</em>
+    </h2>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-quote">"Frankly speaking, more than a mentor or a coach, I found Manan as a friend who cares and who stands for me. He truly possesses all qualities of a good mentor who can gently guide you towards your ultimate goal."</div>
+        <div class="test-author"><strong>Rupesh Jain</strong>Founder & CEO · Candere by Kalyan Jewellers</div>
+        <div class="test-result">₹36 Cr → ₹120 Cr · Conversion 13% → 31%</div>
+      </div>
+      <div class="test-card reveal" style="transition-delay:.1s">
+        <div class="test-quote">"Sold 15% stake at a valuation of ₹250 Cr. The first 10% I sold before meeting Manan Sir at ₹50 Cr. My relationship with my son has transformed. Nothing in the world can match the breakthroughs with Manan Sir. I call him my Clarity Guru."</div>
+        <div class="test-author"><strong>Vicky Mahendru</strong>Founder & CEO · Precious Alloys Pvt Ltd</div>
+        <div class="test-result">₹50 Cr → ₹250 Cr Valuation · 5x</div>
+      </div>
+      <div class="test-card reveal" style="transition-delay:.2s">
+        <div class="test-quote">"Did 471% growth in FY 21-22, improved profitability by 12% as well. From Importers, we are now Cost Leaders, making in India, cheaper than China & Exporting too, thanks to Manan Sir's Strategies and Hand-holding."</div>
+        <div class="test-author"><strong>Kashyap Anandpara</strong>Managing Partner · Sunniva Encom LLP</div>
+        <div class="test-result">471% Growth FY21-22 · Profitability +12%</div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-quote">"Brought down outstanding of over 120 days from 9.6 Cr to 3 Cr in 60 days. Recovered 2 Cr that was declared bad debts in our books for over 18 months thanks to Manan's Strategic Implementation."</div>
+        <div class="test-author"><strong>Shrawan Chaudhary</strong>Managing Director · SM Express Logistics</div>
+        <div class="test-result">₹9.6 Cr → ₹3 Cr Overdue · 60 Days</div>
+      </div>
+      <div class="test-card reveal" style="transition-delay:.1s">
+        <div class="test-quote">"In my 15 years of career I would have attended approx 50 trainings & Manan is the finest. He is the only trainer committed that every participant benefits. He kept pushing selflessly & contributed immensely to my growth."</div>
+        <div class="test-author"><strong>Nimesh Mehta</strong>Director Sales · ASK Investment Managers</div>
+        <div class="test-result">Equity AUM ₹700 Cr → ₹3,000 Cr</div>
+      </div>
+      <div class="test-card reveal" style="transition-delay:.2s">
+        <div class="test-quote">"Manan is a rare breed of professionals who 'Walks the Talk'. His keen eyes & ears unearthed speech habits that ran my life but I never knew they existed. To all successful people, he is the right person to propel effectiveness to a new orbit."</div>
+        <div class="test-author"><strong>Chintan Thakkar</strong>CFO & Executive Director · Naukri.com</div>
+        <div class="test-result">Leadership Transformation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY STRIP -->
+<div class="apply-strip">
+  <div class="container">
+    <h2 class="apply-strip__h2 reveal">
+      The Business You Wanted<br>to Build — It Is Still <em>Possible.</em>
+    </h2>
+    <p class="apply-strip__sub reveal" style="transition-delay:.1s">
+      Maximum 20 founders. No exceptions. Spots are finite. If you are serious — apply now. There is no pitch. No pressure. Just an honest conversation.
+    </p>
+    <div class="reveal" style="transition-delay:.2s">
+      <a href="index.html#apply" class="btn-primary" style="margin-right:16px">Apply for BSS™ 2026 →</a>
+      <a href="index.html" class="btn-secondary" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6)">Back to Home</a>
+    </div>
+    <p style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:32px">
+      +91 80970 10410 &nbsp;·&nbsp; manan@altuscorp.in &nbsp;·&nbsp; www.businessscaleupshastra.com
+    </p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo-text">MANAN <span>VASA</span></div>
+        <div class="footer__tagline">#NoGyaanOnlyGain · Altus Corp</div>
+        <p class="footer__addr">Sacred Space, C-6, Ground Floor,<br>Gambhir Estates, Kotkar Road,<br>Goregaon (East), Mumbai — 400 063<br><br>+91 80970 10410<br>manan@altuscorp.in</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Engagements</div>
+        <ul class="footer__links">
+          <li><a href="one-to-one.html">One-to-One Transformation</a></li>
+          <li><a href="business-scale-up-shastra.html">Business Scale-Up Shastra™</a></li>
+          <li><a href="productivity-shastra.html">Productivity Shastra</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Explore</div>
+        <ul class="footer__links">
+          <li><a href="about.html">About CA Manan Vasa</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Also See</div>
+        <ul class="footer__links">
+          <li><a href="https://www.altuscorp.in" target="_blank">Altus Corp</a></li>
+          <li><a href="https://www.businessscaleupshastra.com" target="_blank">businessscaleupshastra.com</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 Altus Corp / Manan Vasa. All Rights Reserved.</div>
+      <div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/918097010410?text=Hello%20CA%20Manan%20Vasa%2C%20I%20am%20interested%20in%20BSS%E2%84%A2%202026." target="_blank" aria-label="WhatsApp">💬</a>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+const burger=document.getElementById('burger'),drawer=document.getElementById('drawer'),dclose=document.getElementById('dclose');
+burger.addEventListener('click',()=>{drawer.classList.add('open');document.body.style.overflow='hidden'});
+function closeD(){drawer.classList.remove('open');document.body.style.overflow=''}
+dclose.addEventListener('click',closeD);
+document.querySelectorAll('.dl').forEach(l=>l.addEventListener('click',closeD));
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.getElementById(a.getAttribute('href').slice(1));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'})}}));
+</script>
+</body>
+</html>

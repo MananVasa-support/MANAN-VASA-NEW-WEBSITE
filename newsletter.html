@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Implementation Letter — CA Manan Vasa | Subscribe</title><meta name="description" content="A fortnightly note from CA Manan Vasa — written from inside the businesses he is working with. Not inspiration. What is actually working and what founders keep getting wrong."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>:root{--red:#C8000A;--black:#0D0D0D;--ink:#1A1A1A;--grey1:#3D3D3D;--grey2:#6B6B6B;--grey3:#9B9B9B;--grey5:#E8E8E8;--grey7:#F8F8F8;--white:#fff;--dp:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace;--nav-h:76px;--max:1360px;--ease:cubic-bezier(.16,1,.3,1)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--white);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}::selection{background:var(--red);color:#fff}a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:0 40px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.reveal.in{opacity:1;transform:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}.nav.scrolled{border-color:var(--grey5);box-shadow:0 1px 0 var(--grey5)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max);margin:0 auto;padding:0 40px}
+.logo-t{font-family:var(--dp);font-size:22px;font-weight:600;color:var(--black)}.logo-t span{color:var(--red)}
+.nav__links{display:flex;align-items:center;gap:32px;list-style:none}.nav__links a{font-size:13px;font-weight:500;color:var(--grey1);transition:color .2s}.nav__links a:hover{color:var(--black)}
+.nav__cta{background:var(--red);color:#fff!important;padding:11px 24px;font-size:12px!important;font-weight:600!important;letter-spacing:.1em!important;text-transform:uppercase;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
+.btn{background:var(--red);color:#fff;padding:16px 36px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .2s,box-shadow .2s}.btn:hover{background:#e8000f;transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,0,10,.25)}
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:var(--nav-h);background:var(--black);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.hero::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--red) 0%,transparent 40%)}
+.hero-left{padding:80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero-pre{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.hero-pre::before{content:'';width:28px;height:1px;background:rgba(255,255,255,.3)}
+.hero-h1{font-family:var(--dp);font-size:clamp(36px,4.5vw,64px);font-weight:400;color:var(--white);line-height:1.08;margin-bottom:20px}
+.hero-h1 em{font-style:italic;color:var(--red)}
+.hero-tagline{font-family:var(--dp);font-size:22px;font-style:italic;color:rgba(255,255,255,.5);margin-bottom:32px;line-height:1.5}
+.hero-body{font-size:15px;color:rgba(255,255,255,.5);line-height:1.8;max-width:480px}
+/* Sample titles */
+.sample-titles{display:flex;flex-direction:column;gap:2px;margin-top:36px}
+.st-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:16px 20px;font-family:var(--dp);font-size:16px;font-style:italic;color:rgba(255,255,255,.65);transition:background .2s}
+.st-item:hover{background:rgba(255,255,255,.08)}
+/* Sign up form */
+.hero-right{background:var(--white);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.form-title{font-family:var(--dp);font-size:34px;font-weight:400;color:var(--black);margin-bottom:8px}
+.form-title em{font-style:italic;color:var(--red)}
+.form-sub{font-size:14px;color:var(--grey2);margin-bottom:36px;line-height:1.65}
+.fg{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.fg label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey3)}
+.fg input,.fg select{background:var(--grey7);border:1px solid var(--grey5);color:var(--ink);font-family:var(--sans);font-size:14px;padding:14px 16px;outline:none;transition:border-color .2s;width:100%}
+.fg input:focus,.fg select:focus{border-color:var(--red)}
+.promise{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey3);margin-top:12px}
+/* WHY SUBSCRIBE */
+.why{padding:100px 0;background:var(--grey7);border-top:1px solid var(--grey5)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--grey5);margin-top:56px}
+.why-card{background:var(--white);padding:36px 28px}
+.why-card__icon{font-size:32px;margin-bottom:20px}
+.why-card__title{font-family:var(--dp);font-size:21px;font-weight:500;color:var(--black);margin-bottom:10px}
+.why-card__desc{font-size:13px;color:var(--grey2);line-height:1.65}
+/* FOOTER */
+.footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:40px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.footer-inner a{color:rgba(255,255,255,.4);transition:color .2s}.footer-inner a:hover{color:var(--white)}
+@media(max-width:1100px){.hero{grid-template-columns:1fr;min-height:auto}.hero-right{padding:60px 40px}}
+@media(max-width:768px){.container{padding:0 24px}.nav__links{display:none}.hero-left,.hero-right{padding:40px 24px}.why-grid{grid-template-columns:1fr 1fr}.footer-inner{flex-direction:column;gap:12px;text-align:center}}</style></head>
+<body>
+<nav class="nav" id="nav"><div class="nav__inner"><a href="index.html"><span class="logo-t">MANAN <span>VASA</span></span></a><ul class="nav__links"><li><a href="about.html">About</a></li><li><a href="insights.html">Insights</a></li><li><a href="index.html#apply" class="nav__cta">Apply Now →</a></li></ul></div></nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-pre reveal">Fortnightly · Free · From the Ground</div>
+    <h1 class="hero-h1 reveal" style="transition-delay:.1s">The<br>Implementation<br><em>Letter</em></h1>
+    <p class="hero-tagline reveal" style="transition-delay:.15s">"What Is Actually Working Inside Businesses Right Now."</p>
+    <p class="hero-body reveal" style="transition-delay:.2s">A fortnightly note from CA Manan Vasa — written from inside the businesses he is working with. Not inspiration. Not frameworks. What is actually happening, what is actually working and what founders keep getting wrong.</p>
+    <div class="sample-titles reveal" style="transition-delay:.25s">
+      <div class="st-item">"The founder who was working 14 hours a day — and producing 2 hours of value"</div>
+      <div class="st-item">"Why your team keeps escalating decisions back to you — and the structural fix"</div>
+      <div class="st-item">"The cash flow conversation nobody wants to have — until it is too late"</div>
+      <div class="st-item">"What happened when a ₹40 Cr business tried to scale without redesigning"</div>
+      <div class="st-item">"The delegation system that actually works — and why yours probably does not"</div>
+    </div>
+  </div>
+  <div class="hero-right reveal">
+    <div class="form-title">Subscribe to<br>The <em>Implementation</em><br>Letter</div>
+    <p class="form-sub">Free. Fortnightly. Written by CA Manan Vasa from inside real businesses. Unsubscribe anytime.</p>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="nlForm">
+      <input type="hidden" name="type" value="Newsletter Subscription">
+      <div class="fg"><label>First Name *</label><input type="text" name="first_name" required placeholder="Your first name"></div>
+      <div class="fg"><label>Email Address *</label><input type="email" name="email" required placeholder="your@email.com"></div>
+      <div class="fg"><label>Your Role</label>
+        <select name="role"><option value="" disabled selected>Select your role</option><option>Founder / Business Owner</option><option>Family Business</option><option>Professional / Executive</option><option>Chartered Accountant</option><option>Other</option></select>
+      </div>
+      <button type="submit" class="btn" style="width:100%;justify-content:center;margin-top:8px">Subscribe to The Implementation Letter →</button>
+      <div class="promise">No spam. No selling. Unsubscribe anytime. Written personally by CA Manan Vasa.</div>
+    </form>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <div style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px" class="reveal"><span style="width:28px;height:1px;background:var(--red);display:block"></span>Why Subscribe</div>
+    <h2 style="font-family:var(--dp);font-size:clamp(32px,3.5vw,50px);font-weight:400;color:var(--black);line-height:1.1;margin-top:16px;margin-bottom:0" class="reveal" style="transition-delay:.1s">Four Types of Content.<br>One Standard — <em>Real.</em></h2>
+    <div class="why-grid reveal" style="transition-delay:.2s">
+      <div class="why-card"><div class="why-card__icon">🔧</div><div class="why-card__title">A Structural Problem</div><div class="why-card__desc">One real structural problem encountered this fortnight inside a real business — and exactly how it was fixed. No theory. The actual intervention.</div></div>
+      <div class="why-card"><div class="why-card__icon">📊</div><div class="why-card__title">A Pattern Observed</div><div class="why-card__desc">A pattern observed across multiple businesses this fortnight. What it means for yours. The common thread most founders cannot see from inside their own company.</div></div>
+      <div class="why-card"><div class="why-card__icon">⚙️</div><div class="why-card__title">A Tool Explained</div><div class="why-card__desc">One tool from the Make It Happen Framework© — simply explained and immediately applicable. Something you can use in your business this week.</div></div>
+      <div class="why-card"><div class="why-card__icon">🚫</div><div class="why-card__title">A Mistake Documented</div><div class="why-card__desc">A mistake founders keep making — and the structural fix. Written from direct experience. Not academic. From the ground.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div>© 2026 Altus Corp / Manan Vasa. The Implementation Letter.</div><div><a href="index.html">Home</a> · <a href="insights.html">Insights</a> · <a href="privacy.html">Privacy</a></div></div></footer>
+<script>
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.getElementById('nlForm').addEventListener('submit',async e=>{e.preventDefault();const btn=e.target.querySelector('.btn');btn.textContent='Subscribing...';btn.style.opacity='.7';try{const r=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{Accept:'application/json'}});if(r.ok){btn.textContent='✓ Subscribed! Check your inbox.';btn.style.background='#1a7a2e';e.target.reset();}else throw new Error();}catch{btn.textContent='Error — email manan@altuscorp.in';btn.style.opacity='1';}});
+</script></body></html>

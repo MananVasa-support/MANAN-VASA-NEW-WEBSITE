@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Business Dependency Audit — CA Manan Vasa | Is Your Business Running You?</title>
+<meta name="description" content="8 questions. 2 minutes. Find out exactly how dependent your business is on you — and what to do about it. Free audit by CA Manan Vasa.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C8000A;--red-lt:#E8000F;--black:#0D0D0D;--ink:#1A1A1A;--grey1:#3D3D3D;--grey2:#6B6B6B;--grey3:#9B9B9B;--grey4:#C4C4C4;--grey5:#E8E8E8;--grey6:#F2F2F2;--grey7:#F8F8F8;--white:#FFFFFF;--dp:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace;--max:1360px;--ease:cubic-bezier(.16,1,.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--white);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}::selection{background:var(--red);color:#fff}a{color:inherit;text-decoration:none}
+.container{max-width:900px;margin:0 auto;padding:0 40px}
+.btn{background:var(--red);color:#fff;padding:16px 36px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);border:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:10px}.btn:hover{background:var(--red-lt);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,0,10,.25)}
+/* HERO */
+.hero{background:var(--black);padding:120px 0 80px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.hero::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:4px;height:160px;background:linear-gradient(to bottom,var(--red),transparent)}
+.hero__inner{position:relative;z-index:2}
+.hero__pre{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:24px}
+.hero__h1{font-family:var(--dp);font-size:clamp(36px,5vw,68px);font-weight:400;color:var(--white);line-height:1.08;margin-bottom:20px}
+.hero__h1 em{font-style:italic;color:var(--red)}
+.hero__sub{font-size:16px;color:rgba(255,255,255,.5);max-width:560px;margin:0 auto 16px;line-height:1.7}
+.hero__meta{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:rgba(255,255,255,.25);text-transform:uppercase}
+/* AUDIT FORM */
+.audit{padding:80px 0;background:var(--white)}
+.audit-intro{text-align:center;margin-bottom:60px}
+.audit-intro p{font-size:15px;color:var(--grey2);line-height:1.75;max-width:600px;margin:0 auto}
+.questions{display:flex;flex-direction:column;gap:16px;margin-bottom:40px}
+.q-item{background:var(--grey7);border:1px solid var(--grey5);padding:28px 32px;display:flex;align-items:flex-start;gap:24px;transition:border-color .2s,background .2s}
+.q-item.answered-yes{border-color:rgba(200,0,10,.3);background:rgba(200,0,10,.03)}
+.q-item.answered-no{border-color:rgba(0,150,0,.2);background:rgba(0,150,0,.02)}
+.q-num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--grey4);flex-shrink:0;padding-top:3px;min-width:28px}
+.q-text{font-family:var(--dp);font-size:20px;font-weight:400;color:var(--black);line-height:1.35;flex:1}
+.q-btns{display:flex;gap:8px;flex-shrink:0;margin-top:4px}
+.q-btn{padding:10px 20px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--grey4);background:var(--white);color:var(--grey2);cursor:pointer;transition:all .2s}
+.q-btn:hover{border-color:var(--ink);color:var(--ink)}
+.q-btn.yes.active{background:var(--red);border-color:var(--red);color:var(--white)}
+.q-btn.no.active{background:var(--black);border-color:var(--black);color:var(--white)}
+.audit-submit-wrap{text-align:center}
+/* RESULT */
+.result{display:none;margin-top:40px;text-align:center}
+.result-meter{width:100%;height:8px;background:var(--grey5);border-radius:0;margin:28px 0;position:relative;overflow:hidden}
+.result-meter__fill{height:100%;background:var(--red);transition:width 1.2s var(--ease);width:0}
+.result-score{font-family:var(--dp);font-size:72px;font-weight:300;color:var(--black);line-height:1;margin-bottom:8px}
+.result-score span{color:var(--red);font-size:40px}
+.result-label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey3);margin-bottom:32px}
+.result-box{padding:40px;border:1px solid var(--grey5);margin-bottom:32px;text-align:left}
+.result-box__title{font-family:var(--dp);font-size:28px;font-weight:500;color:var(--black);margin-bottom:12px}
+.result-box__title em{font-style:italic;color:var(--red)}
+.result-box__body{font-size:15px;color:var(--grey2);line-height:1.75;margin-bottom:24px}
+.result-box__cta{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--red);text-transform:uppercase;font-weight:600}
+.restart-btn{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey3);background:none;border:none;cursor:pointer;margin-top:20px;text-decoration:underline}
+/* FOOTER */
+.footer{background:var(--black);padding:40px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.footer-inner a{color:rgba(255,255,255,.4);transition:color .2s}.footer-inner a:hover{color:var(--white)}
+@media(max-width:768px){.container{padding:0 24px}.q-item{flex-direction:column;gap:16px}.q-btns{margin-top:0}.hero__h1{font-size:36px}.footer-inner{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__pre">Free · 2 Minutes · 8 Questions</div>
+    <h1 class="hero__h1">Is Your Business Running You —<br>Or Are You Running <em>Your Business?</em></h1>
+    <p class="hero__sub">8 honest questions. An honest answer. And a clear next step — whatever your score.</p>
+    <div class="hero__meta">Free Business Dependency Audit · CA Manan Vasa · Altus Corp</div>
+  </div>
+</section>
+
+<section class="audit">
+  <div class="container">
+    <div class="audit-intro">
+      <p>Answer YES or NO to each question honestly. Based on your pattern of answers, you will receive a specific diagnosis — and a specific recommendation. This is not a lead capture form. It is an honest audit.</p>
+    </div>
+
+    <div id="auditForm">
+      <div class="questions" id="questions">
+        <div class="q-item" data-q="1">
+          <div class="q-num">01</div>
+          <div class="q-text">Does your business slow down or stop when you are unavailable for 3 or more days?</div>
+          <div class="q-btns">
+            <button class="q-btn yes" data-q="1" data-val="yes">YES</button>
+            <button class="q-btn no" data-q="1" data-val="no">NO</button>
+          </div>
+        </div>
+        <div class="q-item" data-q="2">
+          <div class="q-num">02</div>
+          <div class="q-text">Is your strategy primarily in your head — not on paper, not understood by your team?</div>
+          <div class="q-btns">
+            <button class="q-btn yes" data-q="2" data-val="yes">YES</button>
+            <button class="q-btn no" data-q="2" data-val="no">NO</button>
+          </div>
+        </div>
+        <div class="q-item" data-q="3">
+          <div class="q-num">03</div>
+          <div class="q-text">Do you regularly firefight, do other people's work, or chase follow-ups your team should handle?</div>
+          <div class="q-btns">
+            <button class="q-btn yes" data-q="3" data-val="yes">YES</button>
+            <button class="q-btn no" data-q="3" data-val="no">NO</button>
+          </div>
+        </div>
+        <div class="q-item" data-q="4">
+          <div class="q-num">04</div>
+          <div class="q-text">Do you lack a live financial dashboard that shows the truth about your business — without explanation?</div>
+          <div class="q-btns">
+            <button class="q-btn yes" data-q="4" data-val="yes">YES</button>
+            <button class="q-btn no" data-q="4" data-val="no">NO</button>
+          </div>
+        </div>
+        <div class="q-item" data-q="5">
+          <div class="q-num">05</div>
+          <div class="q-text">Do teams escape accountability because KRAs and consequences are not clearly defined?</div>
+          <div class="q-btns">
+            <button class="q-btn yes" data-q="5" data-val="yes">YES</button>
+            <button class="q-btn no" data-q="5" data-val="no">NO</button>
+          </div>
+        </div>
+        <div class="q-item" data-q="6">
+          <div class="q-num">06</div>
+          <div class="q-text">Has revenue been flat or inconsistent for 12 or more months — despite your maximum effort?</div>
+          <div class="q-btns">
+            <button class="q-btn yes" data-q="6" data-val="yes">YES</button>
+            <button class="q-btn no" data-q="6" data-val="no">NO</button>
+          </div>
+        </div>
+        <div class="q-item" data-q="7">
+          <div class="q-num">07</div>
+          <div class="q-text">Do you experience cash flow anxiety despite doing reasonable revenue?</div>
+          <div class="q-btns">
+            <button class="q-btn yes" data-q="7" data-val="yes">YES</button>
+            <button class="q-btn no" data-q="7" data-val="no">NO</button>
+          </div>
+        </div>
+        <div class="q-item" data-q="8">
+          <div class="q-num">08</div>
+          <div class="q-text">Have you attended programs or hired consultants — and still find yourself in the same place?</div>
+          <div class="q-btns">
+            <button class="q-btn yes" data-q="8" data-val="yes">YES</button>
+            <button class="q-btn no" data-q="8" data-val="no">NO</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="audit-submit-wrap">
+        <button class="btn" id="submitAudit" style="opacity:.4;pointer-events:none">See My Results →</button>
+        <p style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--grey3);text-transform:uppercase;margin-top:12px">Answer all 8 questions to unlock your result</p>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result" id="result">
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey3);margin-bottom:16px">Your Business Dependency Score</div>
+      <div class="result-score"><span id="scoreNum">0</span> <span>/8</span></div>
+      <div class="result-label" id="scoreLabel">YES answers</div>
+      <div class="result-meter"><div class="result-meter__fill" id="meterFill"></div></div>
+      <div class="result-box" id="resultBox"></div>
+      <a href="index.html#apply" class="btn">Apply for a Conversation →</a>
+      <br>
+      <button class="restart-btn" id="restartBtn">Restart the Audit</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>© 2026 Altus Corp / Manan Vasa. All Rights Reserved.</div>
+      <div><a href="index.html">Home</a> · <a href="index.html#apply">Apply</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const answers={};
+const resultData=[
+  {min:0,max:2,title:'Strong Foundational Independence',body:'Your business shows signs of structural health. However, the fact that you took this audit suggests you sense something worth examining. Even high-performing businesses have structural debt — things that worked at ₹10 Cr do not always work at ₹50 Cr. A conversation is worth having.',cta:'Speak to CA Manan Vasa — even strong businesses have blind spots.'},
+  {min:3,max:3,title:'The <em>Tipping Point.</em>',body:'Three YES answers is the most dangerous score. Not because the situation is dire — but because it is manageable enough to ignore. Until it is not. This is the best time to act. Before the cracks compound. Before the firefighting becomes the culture. Before the team learns that accountability is optional.',cta:'Apply before it gets harder.'},
+  {min:4,max:6,title:'Built for Exactly <em>Where You Are.</em>',body:'This is a multi-dimensional structural dependency. It is not a personal failing — it is a structural one. The business was built around you because that is how most businesses get built. The question is not whether to fix it. The question is when — and with whom. This is what we were built for.',cta:'This is what Business Scale-Up Shastra™ was designed to solve.'},
+  {min:7,max:8,title:'You Needed This Conversation <em>Yesterday.</em>',body:'Seven or eight YES answers means structural dependency has reached every domain of your business simultaneously. The good news: this is fixable. CA Manan Vasa has entered businesses in exactly this state — and stayed until they ran differently. The work is possible. Do not wait another Monday.',cta:'Do not wait another Monday. Apply today.'}
+];
+
+document.querySelectorAll('.q-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const q=btn.dataset.q;
+    const val=btn.dataset.val;
+    answers[q]=val;
+    const item=document.querySelector(`.q-item[data-q="${q}"]`);
+    item.querySelectorAll('.q-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    item.className='q-item answered-'+val;
+    const answered=Object.keys(answers).length;
+    const submitBtn=document.getElementById('submitAudit');
+    if(answered===8){submitBtn.style.opacity='1';submitBtn.style.pointerEvents='auto';}
+  });
+});
+
+document.getElementById('submitAudit').addEventListener('click',()=>{
+  const yesCount=Object.values(answers).filter(v=>v==='yes').length;
+  document.getElementById('scoreNum').textContent=yesCount;
+  const pct=Math.round((yesCount/8)*100);
+  setTimeout(()=>{document.getElementById('meterFill').style.width=pct+'%';},100);
+  const tier=resultData.find(r=>yesCount>=r.min&&yesCount<=r.max);
+  document.getElementById('resultBox').innerHTML=`
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">${yesCount} YES / ${8-yesCount} NO</div>
+    <div class="result-box__title">${tier.title}</div>
+    <div class="result-box__body">${tier.body}</div>
+    <div class="result-box__cta">${tier.cta}</div>
+  `;
+  document.getElementById('auditForm').style.display='none';
+  const resultEl=document.getElementById('result');
+  resultEl.style.display='block';
+  resultEl.scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+document.getElementById('restartBtn').addEventListener('click',()=>{
+  Object.keys(answers).forEach(k=>delete answers[k]);
+  document.querySelectorAll('.q-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.q-item').forEach(i=>i.className='q-item');
+  document.getElementById('submitAudit').style.opacity='.4';
+  document.getElementById('submitAudit').style.pointerEvents='none';
+  document.getElementById('result').style.display='none';
+  document.getElementById('auditForm').style.display='block';
+  document.getElementById('meterFill').style.width='0';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body></html>

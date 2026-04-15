@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One-to-One Business Transformation — CA Manan Vasa | Private. Bespoke. Intensive.</title>
+<meta name="description" content="The most private, most intense engagement. CA Manan Vasa works exclusively alongside one founder. No cohort. No shared attention. He enters, diagnoses, designs and implements — and stays until done.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C8000A;--red-lt:#E8000F;--black:#0D0D0D;--ink:#1A1A1A;--grey1:#3D3D3D;--grey2:#6B6B6B;--grey3:#9B9B9B;--grey4:#C4C4C4;--grey5:#E8E8E8;--grey6:#F2F2F2;--grey7:#F8F8F8;--white:#FFFFFF;--dp:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace;--nav-h:76px;--max:1360px;--ease:cubic-bezier(.16,1,.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--white);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}::selection{background:var(--red);color:#fff}a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:0 40px}.section{padding:100px 0}
+.label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px}.label::before{content:'';width:28px;height:1px;background:var(--red);flex-shrink:0}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.in{opacity:1;transform:none}
+.section-title{font-family:var(--dp);font-size:clamp(34px,3.8vw,56px);font-weight:400;line-height:1.1;color:var(--black);margin-bottom:20px;margin-top:16px}.section-title em{font-style:italic;color:var(--red)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}.nav.scrolled{border-color:var(--grey5);box-shadow:0 1px 0 var(--grey5)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max);margin:0 auto;padding:0 40px}
+.nav__logo-text{font-family:var(--dp);font-size:22px;font-weight:600;color:var(--black)}.nav__logo-text span{color:var(--red)}
+.nav__links{display:flex;align-items:center;gap:32px;list-style:none}.nav__links a{font-size:13px;font-weight:500;color:var(--grey1);transition:color .2s}.nav__links a:hover{color:var(--black)}
+.nav__cta{background:var(--red);color:#fff!important;padding:11px 24px;font-size:12px!important;font-weight:600!important;letter-spacing:.1em!important;text-transform:uppercase;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
+.btn-primary{background:var(--red);color:#fff;padding:16px 36px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);border:none;display:inline-flex;align-items:center;gap:10px;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}.btn-primary:hover{background:var(--red-lt);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,0,10,.25)}
+.page-hero{background:var(--black);padding:160px 0 100px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.page-hero::after{content:'';position:absolute;top:0;left:0;width:4px;height:200px;background:linear-gradient(to bottom,var(--red),transparent)}
+.hero-pre{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.hero-pre::before{content:'';width:28px;height:1px;background:rgba(255,255,255,.3)}
+.hero-h1{font-family:var(--dp);font-size:clamp(44px,5.5vw,80px);font-weight:400;color:var(--white);line-height:1.06;margin-bottom:24px}
+.hero-h1 em{font-style:italic;color:var(--red)}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.55);max-width:660px;line-height:1.75;margin-bottom:36px}
+.hero-note{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.35);text-transform:uppercase;border:1px solid rgba(255,255,255,.1);display:inline-block;padding:10px 18px;margin-top:16px}
+/* BODY CONTENT */
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.body-text{font-size:15px;color:var(--grey2);line-height:1.8;margin-bottom:16px}
+.pull-quote{font-family:var(--dp);font-size:20px;font-style:italic;color:var(--grey1);padding:24px 32px;border-left:2px solid var(--red);margin:28px 0;background:var(--grey7)}
+.for-list{display:flex;flex-direction:column;gap:2px;margin-top:28px}
+.for-item{background:var(--grey7);border:1px solid var(--grey5);padding:20px 24px;display:flex;gap:14px;align-items:flex-start}
+.for-item-icon{color:var(--red);flex-shrink:0;font-size:18px;margin-top:2px}
+.for-item-text{font-size:14px;color:var(--grey1);line-height:1.6}
+.for-item-text strong{display:block;font-weight:600;color:var(--black);margin-bottom:3px}
+/* HOW IT WORKS */
+.hiw{background:var(--grey7);border-top:1px solid var(--grey5)}
+.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:56px;background:var(--grey5)}
+.hiw-step{background:var(--white);padding:36px 28px}
+.hiw-step__num{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.hiw-step__title{font-family:var(--dp);font-size:22px;font-weight:500;color:var(--black);margin-bottom:10px}
+.hiw-step__desc{font-size:13px;color:var(--grey2);line-height:1.65}
+/* APPLY DARK */
+.apply-dark{background:var(--black);padding:100px 0}
+.apply-dark__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.apply-dark h2{font-family:var(--dp);font-size:clamp(34px,4vw,56px);font-weight:400;color:var(--white);line-height:1.1;margin-bottom:20px}
+.apply-dark h2 em{font-style:italic;color:var(--red)}
+.apply-dark p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:28px}
+.apply-dark .contact-list{display:flex;flex-direction:column;gap:10px}
+.apply-dark .contact-list a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.5);text-transform:uppercase;transition:color .2s}
+.apply-dark .contact-list a:hover{color:var(--white)}
+.apply-dark .contact-list span{color:rgba(255,255,255,.25);margin-right:12px}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.form-group label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.form-group input,.form-group textarea,.form-group select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--white);font-family:var(--sans);font-size:14px;padding:14px 16px;outline:none;transition:border-color .2s;width:100%}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(200,0,10,.6)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* FOOTER */
+.footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:60px 0 40px}
+.footer__inner{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px}
+.footer__logo-text{font-family:var(--dp);font-size:20px;color:var(--white);margin-bottom:12px}.footer__logo-text span{color:var(--red)}
+.footer__tagline{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:16px}
+.footer__addr{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
+.footer__col-title{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
+.footer__links{list-style:none;display:flex;flex-direction:column;gap:8px}.footer__links a{font-size:13px;color:rgba(255,255,255,.5);transition:color .2s}.footer__links a:hover{color:var(--white)}
+.footer__bottom{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.25);text-transform:uppercase}
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:900;background:#25D366;color:#fff;padding:14px 18px;text-decoration:none;font-size:20px;transition:transform .3s var(--ease)}.wa-float:hover{transform:translateY(-3px)}
+@media(max-width:1100px){.content-grid,.apply-dark__inner{grid-template-columns:1fr;gap:48px}.hiw-steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.container{padding:0 24px}.section{padding:70px 0}.nav__links{display:none}.footer__inner{grid-template-columns:1fr 1fr}.footer__bottom{flex-direction:column;gap:8px}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html"><span class="nav__logo-text">MANAN <span>VASA</span></span></a>
+    <ul class="nav__links">
+      <li><a href="about.html">About</a></li><li><a href="index.html#work">The Work</a></li><li><a href="case-studies.html">Results</a></li><li><a href="business-scale-up-shastra.html">BSS™</a></li>
+      <li><a href="#apply" class="nav__cta">Apply Now →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:2">
+    <div class="hero-pre reveal">Most Private Engagement</div>
+    <h1 class="hero-h1 reveal" style="transition-delay:.1s">One-to-One<br>Business<br><em>Transformation</em></h1>
+    <p class="hero-sub reveal" style="transition-delay:.2s">The most private, most intensive engagement CA Manan Vasa takes. One founder. One architect. No cohort, no group, no shared attention. He enters your business — and stays until every domain is transformed.</p>
+    <div class="reveal" style="transition-delay:.3s">
+      <a href="#apply" class="btn-primary">Enquire About One-to-One →</a>
+    </div>
+    <div class="hero-note reveal" style="transition-delay:.35s">This engagement is by application and selection only. Not all enquiries will be accepted.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      <div>
+        <div class="label reveal">What This Is</div>
+        <h2 class="section-title reveal" style="transition-delay:.1s">Private. Bespoke.<br><em>Intensive.</em> No Shared Attention.</h2>
+        <p class="body-text reveal" style="transition-delay:.15s">The One-to-One Business Transformation is not the BSS™ cohort. It is a completely different engagement — more intensive, more private, more customised. CA Manan Vasa works directly and exclusively alongside one founder. Your business. Your complexity. His complete focus.</p>
+        <p class="body-text reveal" style="transition-delay:.2s">He does not divide his attention. He does not apply a framework built for twenty. He enters your specific business, diagnoses it completely and honestly, designs a transformation architecture unique to your situation, and implements it alongside you until it is done.</p>
+        <div class="pull-quote reveal" style="transition-delay:.25s">"Not consulting. Not advisory. Not coaching. A private, one-to-one Business Implementation Intervention — where the only outcome that matters is the one visible in your business."</div>
+        <p class="body-text reveal" style="transition-delay:.3s">This engagement is for situations where the complexity, the stakes, or the sensitivity of the transformation demands complete privacy and undivided attention. Family business succession. Second-generation transitions. Turnarounds. Restructuring. High-stakes strategic pivots.</p>
+      </div>
+      <div>
+        <div class="label reveal" style="margin-bottom:20px">Best Suited For</div>
+        <div class="for-list reveal" style="transition-delay:.1s">
+          <div class="for-item"><div class="for-item-icon">◆</div><div class="for-item-text"><strong>High-Complexity, High-Stakes Businesses</strong>Where the transformation requires complete privacy and undivided attention across multiple domains simultaneously</div></div>
+          <div class="for-item"><div class="for-item-icon">◆</div><div class="for-item-text"><strong>Family Business Succession</strong>Father-son transitions, second-generation involvement, governance design, family dynamics addressed directly</div></div>
+          <div class="for-item"><div class="for-item-icon">◆</div><div class="for-item-text"><strong>Business Turnarounds</strong>When the situation is urgent, the stakes are high, and a group cohort pace is not appropriate</div></div>
+          <div class="for-item"><div class="for-item-icon">◆</div><div class="for-item-text"><strong>Strategic Pivots</strong>Full business model redesign — like transitioning from importer to manufacturer, or entering a new market</div></div>
+          <div class="for-item"><div class="for-item-icon">◆</div><div class="for-item-text"><strong>Founders Who Cannot Share Their Process</strong>Competitive sensitivity. Personal complexity. Situations where a cohort setting is simply not appropriate.</div></div>
+          <div class="for-item"><div class="for-item-icon">◆</div><div class="for-item-text"><strong>Significant Stakes</strong>₹50 Cr+ businesses where every decision has outsized consequence and requires a partner who reads financials surgically</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hiw">
+  <div class="container">
+    <div class="label reveal">How It Works</div>
+    <h2 class="section-title reveal" style="transition-delay:.1s; max-width:600px">From First Conversation<br>to <em>Business Transformed.</em></h2>
+    <div class="hiw-steps reveal" style="transition-delay:.2s">
+      <div class="hiw-step">
+        <div class="hiw-step__num">Step 01</div>
+        <div class="hiw-step__title">The Honest Conversation</div>
+        <div class="hiw-step__desc">CA Manan Vasa will not pitch. He will ask. He will listen. He will tell you honestly whether this engagement is right for your situation — and if it is not, he will say so. He does not take engagements he cannot win.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-step__num">Step 02</div>
+        <div class="hiw-step__title">The Complete Diagnosis</div>
+        <div class="hiw-step__desc">He enters the business. He reads the financials like a surgeon. He assesses all six domains — foundation, strategy, structure, processes, people, performance. Nothing is assumed. Everything is examined.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-step__num">Step 03</div>
+        <div class="hiw-step__title">The Transformation Architecture</div>
+        <div class="hiw-step__desc">A bespoke transformation plan — designed specifically for your business, your people, your complexity. Not a template. Not a cohort framework. Something built for you, from scratch.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-step__num">Step 04</div>
+        <div class="hiw-step__title">Implementation Until Done</div>
+        <div class="hiw-step__desc">He implements alongside you. Every system. Every structure. Every habit. He does not complete a deliverable and exit. He stays until the work is done, the systems are live, and results are undeniable.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section apply-dark" id="apply">
+  <div class="container">
+    <div class="apply-dark__inner">
+      <div>
+        <div class="label" style="color:rgba(255,255,255,.4)" class="reveal"><span></span>Enquire Now</div>
+        <h2 class="reveal" style="transition-delay:.1s">The Most Private<br>Engagement<br>CA Manan Vasa <em>Takes.</em></h2>
+        <p class="reveal" style="transition-delay:.15s">This engagement is by application and selection only. If you believe this is the right fit — describe your situation honestly. CA Manan Vasa will respond personally.</p>
+        <div class="contact-list reveal" style="transition-delay:.2s">
+          <a href="tel:+918097010410"><span>Phone</span> +91 80970 10410</a>
+          <a href="mailto:manan@altuscorp.in"><span>Email</span> manan@altuscorp.in</a>
+          <a href="https://wa.me/918097010410" target="_blank"><span>WhatsApp</span> +91 80970 10410</a>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group"><label>First Name *</label><input type="text" name="first_name" required placeholder="First name"></div>
+            <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" required placeholder="Last name"></div>
+          </div>
+          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX"></div>
+          <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="your@email.com"></div>
+          <div class="form-group"><label>Company / Business</label><input type="text" name="company" placeholder="Company name"></div>
+          <div class="form-group"><label>Describe Your Situation</label><textarea name="situation" rows="4" placeholder="What is your business? What is the complexity? What needs to change? The more specific you are — the better the conversation."></textarea></div>
+          <button type="submit" class="btn-primary" style="margin-top:8px">Send Enquiry →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container">
+  <div class="footer__inner">
+    <div><div class="footer__logo-text">MANAN <span>VASA</span></div><div class="footer__tagline">#NoGyaanOnlyGain</div><p class="footer__addr">Sacred Space, Goregaon (East), Mumbai<br>+91 80970 10410 · manan@altuscorp.in</p></div>
+    <div><div class="footer__col-title">Engagements</div><ul class="footer__links"><li><a href="one-to-one.html">One-to-One</a></li><li><a href="business-scale-up-shastra.html">BSS™</a></li><li><a href="productivity-shastra.html">Productivity Shastra</a></li></ul></div>
+    <div><div class="footer__col-title">Explore</div><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="speaking.html">Speaking</a></li></ul></div>
+    <div><div class="footer__col-title">Also See</div><ul class="footer__links"><li><a href="https://www.altuscorp.in" target="_blank">Altus Corp</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+  </div>
+  <div class="footer__bottom"><div>© 2026 Altus Corp / Manan Vasa. All Rights Reserved.</div><div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div></div>
+</div></footer>
+<a class="wa-float" href="https://wa.me/918097010410" target="_blank">💬</a>
+<script>const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
+</body></html>
